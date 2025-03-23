@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - Portfolio</title>
+    <style>
+        /* Dark and Light Mode */
+        :root {
+            --primary-dark: #2C3E50;
+            --secondary-dark: #E74C3C;
+            --background-dark: #1A1A1A;
+            --text-dark: #ECF0F1;
+            --accent-dark: #F1C40F;
+
+            --primary-light: #FFFFFF;
+            --secondary-light: #E74C3C;
+            --background-light: #ECF0F1;
+            --text-light: #34495E;
+            --accent-light: #F39C12;
+        }
+        
+        body {
+            background: var(--background-dark);
+            color: var(--text-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            transition: background 0.5s, color 0.5s;
+        }
+
+        .container {
+            background: var(--primary-dark);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
+            transition: background 0.5s;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--accent-dark);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(241, 196, 15, 0.8);
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .mode-toggle, .game-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--secondary-dark);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+
+        .mode-toggle:hover, .game-button:hover {
+            background: var(--accent-dark);
+        }
+
+        .game-button {
+            top: 60px;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Light Mode */
+        .light-mode {
+            background: var(--background-light);
+            color: var(--text-light);
+        }
+
+        .light-mode .container {
+            background: var(--primary-light);
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .light-mode h1 {
+            color: var(--accent-light);
+        }
+
+        .light-mode p {
+            color: var(--text-light);
+        }
+
+        .mode-toggle img {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <button class="mode-toggle" onclick="toggleMode()">
+        <img src="dark-mode-icon.png" alt="Mode Toggle">
+    </button>
+    <button class="game-button" onclick="openGame()">Play Tic-Tac-Toe</button>
+    <div class="container">
+        <h1>Coming Soon!</h1>
+        <p>Our website is currently under maintenance. Stay tuned for something amazing!</p>
+        <p class="footer">&copy; 2025 Min Khant Naing | All rights reserved</p>
+    </div>
+
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle("light-mode");
+            const modeButton = document.querySelector(".mode-toggle img");
+
+            if (document.body.classList.contains("light-mode")) {
+                modeButton.src = "light-mode-icon.png";
+            } else {
+                modeButton.src = "dark-mode-icon.png";
+            }
+        }
+
+        function openGame() {
+            window.open("https://playtictactoe.org/", "TicTacToe", "width=600,height=600");
+        }
+    </script>
+</body>
+</html>
